@@ -11,7 +11,7 @@
 
     <style>
         .page-content {
-            padding: 20px 200px;
+            padding: 50px 400px;
         }
         .demo-list-control {
         width: 300px;
@@ -19,37 +19,48 @@
         .demo-list-radio {
         display: inline;
         }
+
+        .demo-layout-transparent {
+        background: url('../assets/demos/transparent.jpg') center / cover;
+        }
+        .demo-layout-transparent .mdl-layout__header,
+        .demo-layout-transparent .mdl-layout__drawer-button {
+        color: white;
+        }
     </style>
 
     <script src="script.js"></script>
 </head>
 <body style="background-image:url(meinhintergrund.jpg)">
 <body>
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">Project lookover</span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-        </nav>
+
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--transparent">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Title</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">Title</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">NEW</a>
+            <a class="mdl-navigation__link" href="">WAITING</a>
+            <a class="mdl-navigation__link" href="">IN PROCESS</a>
+            <a class="mdl-navigation__link" href="">DONE</a>
+          </nav>
+        </div>
+        <main class="mdl-layout__content">
+        </main>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Progress steps</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">NEW</a>
-        <a class="mdl-navigation__link" href="">WAITING</a>
-        <a class="mdl-navigation__link" href="">IN PROCESS</a>
-        <a class="mdl-navigation__link" href="">DONE</a>
-      </nav>
-    </div>
+
+
     <main class="mdl-layout__content">
       <div class="page-content"><!-- Your content goes here --></div>
-
+    
       <form onsubmit="addTodo()">
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="text" id="toDoField">
@@ -60,9 +71,7 @@
             </button>
         <!-- List with avatar and controls -->
     
-    <ul class="demo-list-control mdl-list" id="todolist">
-     
-    </ul>
+    <ul class="demo-list-control mdl-list" id="todolist"></ul>
       </form>
 </body>
 
